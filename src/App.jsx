@@ -17,13 +17,13 @@ export const goods = [
 ];
 
 export const App = () => {
-  const [good, setGood] = useState('No goods');
+  const [good, setGood] = useState('');
 
   return (
     <main className="section container">
       <h1 className="title is-flex is-align-items-center">
-        {`${good} selected`}
-        {good === 'No goods' ? (
+        {good === '' ? `No goods selected` : `${good} is selected`}
+        {good === '' ? (
           ''
         ) : (
           <button
@@ -31,7 +31,7 @@ export const App = () => {
             type="button"
             className="delete ml-3"
             onClick={() => {
-              setGood('No goods');
+              setGood('');
             }}
           />
         )}
